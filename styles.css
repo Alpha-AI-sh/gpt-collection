@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: url("https://i.imgur.com/0UshiHx.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.overlay {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  max-width: 800px;
+  width: 100%;
+}
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: black;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.gpt-card {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  color: #000;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gpt-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+.gpt-card:nth-child(1) { animation-delay: 0.1s; }
+.gpt-card:nth-child(2) { animation-delay: 0.3s; }
+.gpt-card:nth-child(3) { animation-delay: 0.5s; }
+.gpt-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.gpt-card p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+.gpt-card a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4b6cb7;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.gpt-card a:hover {
+  background-color: #182848;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .overlay {
+    padding: 30px 20px;
+  }
+  .gpt-card {
+    padding: 15px;
+  }
+  .gpt-card h2 {
+    font-size: 1.2rem;
+  }
+  .gpt-card p {
+    font-size: 0.9rem;
+  }
+  .gpt-card a {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
